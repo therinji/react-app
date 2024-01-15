@@ -1,22 +1,18 @@
-import React, {useState} from 'react';
+
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import NavigationBar from './components/NavigationBar'
+import Home from './Pages/Home'
+import About from './Pages/About'
 
-function App() {
-  const [getNavbarValue, setNavbarValue] = useState("")
-
-  const changeNavbarValue = () => {
-    setNavbarValue('myContact')
-  }
-  
+const App= () => {
     return (
-    <div>
-      <NavigationBar/>
-      <h1>Homepage</h1>
-      <p>{getNavbarValue}</p>
-      <button onClick={() => changeNavbarValue()}>Ubah Posisi</button>
-    </div>
-  );
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+        </Routes>
+      </Router>
+    )
 }
 
 export default App;
