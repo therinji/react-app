@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Button from './components/Button'
+import Footer from './components/Footer'
 
 function App() {
+  const navText = "Coba tekan"
+  const click = () => {
+    return alert('woy');
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +24,9 @@ function App() {
         >
           Learn React
         </a>
+        <Header text={navText}/>
+        <Button clicked={click} text={navText}/>
+        <Footer text="Bajigur woy"/>
       </header>
     </div>
   );
